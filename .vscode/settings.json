@@ -1,0 +1,11 @@
+{
+	"editor.stickyScroll.scrollWithEditor": false,
+	"workbench.tree.enableStickyScroll": false,
+	"editor.hover.sticky": false,
+	"editor.stickyScroll.enabled": false,
+	"liveServer.settings.CustomBrowser": "chrome",
+	"indentRainbow.colorOnWhiteSpaceOnly": false,
+	"liveServer.settings.port": 5501,
+	"prettier.singleQuote": true,
+	"livePreview.defaultPreviewPath": "/webClock_http-server/index.html"
+}
