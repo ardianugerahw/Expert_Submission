@@ -1,3 +1,193 @@
-img {
-  display: block;
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body,
+html {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+/* General styles */
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	color: #333;
+}
+
+/* Header */
+header.header {
+	background-color: #d4e7c5;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem 2rem;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.header__title {
+	font-size: 2rem;
+	margin: 0;
+}
+
+.header__menu {
+	display: none;
+	font-size: 1.5rem;
+	cursor: pointer;
+	color: #333;
+}
+nav.nav {
+	display: flex;
+	flex-direction: row;
+}
+nav.nav ul.nav__list {
+	display: flex;
+	flex-direction: row;
+	gap: 20px 20px;
+}
+nav.nav ul.nav__list li.nav__item {
+	list-style-type: none;
+	color: aqua;
+}
+nav.nav ul.nav__list li.nav__item a {
+	text-decoration: none;
+	color: #616161;
+}
+
+nav.nav ul.nav__list li.nav__item a:hover {
+	text-decoration: underline;
+	color: #000;
+}
+
+/* 
+@media only screen and (max-width: 768px) {
+	.header__menu {
+		display: block;
+	}
+
+	nav {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		background-color: #f5f5f5;
+		padding: 2rem;
+		transition: transform 0.3s ease-in-out;
+	}
+
+	nav.active {
+		transform: translateX(0);
+	}
+
+	.nav__list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.nav__item {
+		margin-bottom: 1rem;
+	}
+
+	.nav__item a {
+		display: block;
+		font-size: 1.2rem;
+		color: #333;
+		text-decoration: none;
+		transition: color 0.3s ease-in-out;
+	}
+
+	.nav__item a:hover {
+		color: #007bff;
+	}
+} */
+
+#drawer.active {
+	display: block;
+}
+
+/* Hero */
+div.hero {
+	display: flex;
+	background-image: url('../public/images/heros/hero-image_4.jpg');
+
+	background-position: center;
+	width: 100%;
+	min-height: 400px;
+
+	text-align: center;
+}
+
+/* Main */
+main {
+	padding: 2rem;
+	background-color: #99bc85;
+}
+
+/* Gaya umum */
+.card-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+	margin: 20px;
+}
+
+.card {
+	background-color: #fff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	width: 300px; /* Sesuaikan lebar sesuai kebutuhan */
+	text-align: center;
+}
+
+/* Gaya header kartu */
+.card-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px;
+	border-bottom: 1px solid #eee;
+}
+
+.card-city {
+	font-weight: bold;
+}
+
+.card-rating {
+	color: #f9a825; /* Warna kuning untuk rating */
+}
+
+/* Gaya body kartu */
+.card-body {
+	padding: 15px;
+}
+
+.card-body h3 {
+	margin-top: 0;
+	margin-bottom: 10px;
+	font-size: 18px;
+}
+
+.card-body p {
+	line-height: 1.6;
+}
+
+article {
+	margin-bottom: 1rem;
+	padding: 1rem;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+
+/* Footer */
+footer {
+	background-color: #f5f5f5;
+	text-align: center;
+	padding: 1rem;
 }

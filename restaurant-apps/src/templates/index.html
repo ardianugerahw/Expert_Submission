@@ -1,19 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Restaurant Apps</title>
-  </head>
-  <body>
-    <h1>Restaurant Apps Starter Project</h1>
-    <p>Hallo coders! Anda berhasil menjalankan starter project.</p>
-    <p>
-      Jangan lupa untuk menggunakan salah satu gambar yang berada pada ./images/heros
-      sebagai background hero elemen.
-    </p>
-    <img src="./images/heros/hero-image_1.jpg" width="450" alt="" />
-    <img src="./images/heros/hero-image_2.jpg" width="450" alt="" />
-    <img src="./images/heros/hero-image_3.jpg" width="450" alt="" />
-    <img src="./images/heros/hero-image_4.jpg" width="450" alt="" />
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Restaurant Apps</title>
+	</head>
+	<body>
+		<!-- navbar -->
+		<header class="header">
+			<div class="header__inner">
+				<h1 class="header__title">Info Makan</h1>
+			</div>
+			<a id="menu" class="header__menu">☰</a>
+			<nav id="drawer" class="nav">
+				<ul class="nav__list">
+					<li class="nav__item"><a href="/index.html">Home</a></li>
+					<li class="nav__item"><a href="#">Favorite</a></li>
+					<li class="nav__item"><a href="https://www.linkedin.com/in/ardianugerahwicaksana/">About Us</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- hero -->
+		<div class="hero"></div>
+		<main>
+			<div class="card-container">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-city">Malang</div>
+						<div class="card-rating">4.8</div>
+					</div>
+					<div class="card-body">
+						<h3>Restoran Sederhana</h3>
+						<p>Menawarkan hidangan Indonesia otentik dengan suasana pedesaan yang nyaman.</p>
+					</div>
+				</div>
+			</div>
+
+			<restaurant-list></restaurant-list>
+			<lempar-lah></lempar-lah>
+			<blog-list></blog-list>
+			<article>art1</article>
+			<article>art2</article>
+			<article>art3</article>
+		</main>
+		<footer>Copyright © 2020 - Hunger Apps</footer>
+	</body>
 </html>
