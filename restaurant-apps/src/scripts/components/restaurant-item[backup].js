@@ -21,8 +21,8 @@ class RestaurantItem extends HTMLElement {
 		this._restaurant['rating'] = value.rating;
 
 		// Melakukan validasi panjang deskripsi
-		if (value.description.length > 200) {
-			this._restaurant['description'] = value.description.substring(0, 200) + '...'; // Memotong deskripsi jika terlalu panjang
+		if (value.description.length > 100) {
+			this._restaurant['description'] = value.description.substring(0, 100) + '...'; // Memotong deskripsi jika terlalu panjang
 		} else {
 			this._restaurant['description'] = value.description; // Menggunakan deskripsi asli jika tidak terlalu panjang
 		}
@@ -34,23 +34,24 @@ class RestaurantItem extends HTMLElement {
 	}
 	updateStyle() {
 		this._style.textContent = `
-        
-		.card-item {
-			border: 1px solid black;
-			border-radius: 8px;
-			padding: 16px;
-
-			flex-basis: 15%;
-
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+			margin: 20px;
 			transition: all 150ms ease-in;
-
+            
+        }
+		.card {
             background-color: #fff;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
+            width: 300px; /* Sesuaikan lebar sesuai kebutuhan */
             text-align: center;
         }
         
-        
+        /* Gaya header kartu */
         .card-header {
             display: flex;
             justify-content: space-between;
@@ -106,8 +107,8 @@ class RestaurantItem extends HTMLElement {
 		this.innerHTML = `
         ${this._style.outerHTML}
 
-		
-				<div tabindex="0" class="card-item">
+		<div class="card-container">
+				<div class="card">
 					<div class="card-header">
 						<div class="card-city"><a href="#">Kota ${this._restaurant.city}</a></div>
 						<div class="card-rating">${this._restaurant.rating}</div>
@@ -120,7 +121,7 @@ class RestaurantItem extends HTMLElement {
 						<p>${this._restaurant.description}</p>
 					</div>
 				</div>
-			`;
+			</div>`;
 	}
 }
 customElements.define('restaurant-item', RestaurantItem);

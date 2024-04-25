@@ -12,7 +12,19 @@ class RestaurantList extends HTMLElement {
 	connectedCallback() {
 		this.render();
 	}
-	updateStyle() {}
+	updateStyle() {
+		this._style.textContent = `
+        restaurant-list {
+            margin-block: 1rem;
+
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+			column-gap: 2%;
+			row-gap: 24px;
+        }
+		`;
+	}
 	render() {
 		this.updateStyle();
 

@@ -6,44 +6,39 @@
 		<title>Restaurant Apps</title>
 	</head>
 	<body>
+		<a href="#maincontent" class="skip-link">Skip To Content</a>
 		<!-- navbar -->
 		<header class="header">
 			<div class="header__inner">
-				<h1 class="header__title">Info Makan</h1>
+				<h1 tabindex="0" class="header__title">Resto Apps</h1>
 			</div>
-			<a id="menu" class="header__menu">☰</a>
+			<a tabindex="0" id="menu" class="header__menu">☰</a>
 			<nav id="drawer" class="nav">
 				<ul class="nav__list">
-					<li class="nav__item"><a href="/index.html">Home</a></li>
-					<li class="nav__item"><a href="#">Favorite</a></li>
-					<li class="nav__item"><a href="https://www.linkedin.com/in/ardianugerahwicaksana/">About Us</a></li>
+					<li class="nav__item"><a tabindex="0" href="/index.html">Home</a></li>
+					<li class="nav__item"><a tabindex="0" href="#">Favorite</a></li>
+					<li class="nav__item"><a tabindex="0" href="https://www.linkedin.com/in/ardianugerahwicaksana/">About Us</a></li>
 				</ul>
 			</nav>
 		</header>
 
 		<!-- hero -->
-		<div class="hero"></div>
+		<div class="hero">
+			<div class="hero__inner">
+				<h1 class="hero__title">Bangun Karirmu Sebagai Developer Profesional</h1>
+				<p class="hero__tagline">Jadilah tuan rumah di negeri sendiri dengan belajar langsung dari para inovator dan developer expert</p>
+			</div>
+		</div>
 		<main>
-			<div class="card-container">
-				<div class="card">
-					<div class="card-header">
-						<div class="card-city">Malang</div>
-						<div class="card-rating">4.8</div>
-					</div>
-					<div class="card-body">
-						<h3>Restoran Sederhana</h3>
-						<p>Menawarkan hidangan Indonesia otentik dengan suasana pedesaan yang nyaman.</p>
-					</div>
+			<div id="maincontent" class="content">
+				<h1 class="content__label">Daftar Resto</h1>
+				<!-- ini adalah list -->
+				<div class="card-list">
+					<!-- ini adalah item -->
+					<restaurant-list></restaurant-list>
 				</div>
 			</div>
-
-			<restaurant-list></restaurant-list>
-			<lempar-lah></lempar-lah>
-			<blog-list></blog-list>
-			<article>art1</article>
-			<article>art2</article>
-			<article>art3</article>
 		</main>
-		<footer>Copyright © 2020 - Hunger Apps</footer>
+		<footer>Copyright © 2024 - Resto Apps</footer>
 	</body>
 </html>

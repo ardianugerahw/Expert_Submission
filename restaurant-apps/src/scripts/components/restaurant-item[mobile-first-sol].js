@@ -21,8 +21,8 @@ class RestaurantItem extends HTMLElement {
 		this._restaurant['rating'] = value.rating;
 
 		// Melakukan validasi panjang deskripsi
-		if (value.description.length > 200) {
-			this._restaurant['description'] = value.description.substring(0, 200) + '...'; // Memotong deskripsi jika terlalu panjang
+		if (value.description.length > 100) {
+			this._restaurant['description'] = value.description.substring(0, 100) + '...'; // Memotong deskripsi jika terlalu panjang
 		} else {
 			this._restaurant['description'] = value.description; // Menggunakan deskripsi asli jika tidak terlalu panjang
 		}
@@ -107,7 +107,7 @@ class RestaurantItem extends HTMLElement {
         ${this._style.outerHTML}
 
 		
-				<div tabindex="0" class="card-item">
+				<div class="card-item">
 					<div class="card-header">
 						<div class="card-city"><a href="#">Kota ${this._restaurant.city}</a></div>
 						<div class="card-rating">${this._restaurant.rating}</div>
