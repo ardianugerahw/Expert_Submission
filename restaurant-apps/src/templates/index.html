@@ -3,10 +3,11 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Website restaurant apps ini dibuat dengan menerapkan custom elemen dan aksesibilitas" />
 		<title>Restaurant Apps</title>
 	</head>
 	<body>
-		<a href="#maincontent" class="skip-link">Skip To Content</a>
+		<a tabindex="0" href="#maincontent" class="skip-link">Skip To Content</a>
 		<!-- navbar -->
 		<header class="header">
 			<div class="header__inner">
@@ -17,21 +18,16 @@
 				<ul class="nav__list">
 					<li class="nav__item"><a tabindex="0" href="/index.html">Home</a></li>
 					<li class="nav__item"><a tabindex="0" href="#">Favorite</a></li>
-					<li class="nav__item"><a tabindex="0" href="https://www.linkedin.com/in/ardianugerahwicaksana/">About Us</a></li>
+					<li class="nav__item"><a tabindex="0" href="https://www.linkedin.com/in/ardianugerahwicaksana/">About Me</a></li>
 				</ul>
 			</nav>
 		</header>
 
 		<!-- hero -->
-		<div class="hero">
-			<div class="hero__inner">
-				<h1 class="hero__title">Bangun Karirmu Sebagai Developer Profesional</h1>
-				<p class="hero__tagline">Jadilah tuan rumah di negeri sendiri dengan belajar langsung dari para inovator dan developer expert</p>
-			</div>
-		</div>
+		<div class="hero"></div>
 		<main>
 			<div id="maincontent" class="content">
-				<h1 class="content__label">Daftar Resto</h1>
+				<h1 tabindex="0" class="content__label">Daftar Resto</h1>
 				<!-- ini adalah list -->
 				<div class="card-list">
 					<!-- ini adalah item -->

@@ -1,7 +1,6 @@
 restaurant-list {
 	display: grid;
 	grid-row-gap: 16px;
-
 	transition: all 150ms ease-in;
 }
 @media screen and (max-width: 499px) {
@@ -10,12 +9,15 @@ restaurant-list {
 		width: 200px;
 		position: absolute;
 
-		transform: translate(0px, -100px);
 		align-items: center;
 		text-align: center;
 
 		transition: transform 0.5s ease-in-out;
-		border-bottom-right-radius: 200px;
+		border-bottom-right-radius: 50px;
+
+		z-index: 100;
+		left: -200px;
+		top: 116px;
 	}
 
 	nav.nav ul.nav__list {
@@ -26,12 +28,19 @@ restaurant-list {
 	}
 
 	.open {
-		-webkit-transform: translate(0, 0);
-		transform: translate(0, 0);
+		transform: translate(200px, 0px);
 	}
 
 	.nav__item {
 		border-bottom: 1px solid #e0e0e0;
+	}
+
+	div.card-item div.card-header div.card-city a {
+		font-size: larger;
+	}
+
+	div.card-body h3 a {
+		font-size: smaller;
 	}
 }
 @media screen and (min-width: 455px) {
@@ -68,4 +77,7 @@ restaurant-list {
 	}
 }
 @media screen and (min-width: 1200px) {
+	.hero {
+		min-width: 1000px;
+	}
 }

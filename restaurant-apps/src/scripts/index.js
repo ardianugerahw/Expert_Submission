@@ -3,7 +3,7 @@ import '../styles/main.css';
 import '../styles/responsive.css';
 import '../styles/skip-link.css';
 
-import data from '../public/data/DATA.json' assert { type: 'json' };
+import data from '../public/data/DATA.json';
 import './components/restaurant-list.js';
 import './components/restaurant-item.js';
 
@@ -31,20 +31,3 @@ hero.addEventListener('click', function () {
 header.addEventListener('click', function () {
 	drawer.classList.remove('open');
 });
-// const menu = document.querySelector('#menu');
-// const hero = document.querySelector('.hero');
-// const main = document.querySelector('main');
-// const drawer = document.querySelector('#drawer');
-
-// menu.addEventListener('click', function (event) {
-//   drawer.classList.toggle('open');
-//   event.stopPropagation();
-// });
-
-// hero.addEventListener('click', function () {
-//   drawer.classList.remove('open');
-// });
-
-// main.addEventListener('click', function () {
-//   drawer.classList.remove('open');
-// });

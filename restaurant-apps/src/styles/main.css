@@ -38,6 +38,10 @@ header.header a.header__menu {
 	font-size: 1.5rem;
 	cursor: pointer;
 	color: #333;
+	align-content: center;
+
+	padding-inline: 10px;
+	padding-block: 10px;
 }
 nav.nav {
 	display: flex;
@@ -50,11 +54,12 @@ nav.nav ul.nav__list {
 }
 nav.nav ul.nav__list li.nav__item {
 	list-style-type: none;
-	color: aqua;
 }
 nav.nav ul.nav__list li.nav__item a {
 	text-decoration: none;
 	color: #616161;
+
+	align-content: center;
 }
 
 nav.nav ul.nav__list li.nav__item a:hover {
@@ -74,27 +79,7 @@ div.hero {
 	min-height: 400px;
 
 	display: flex;
-	align-items: center;
-	text-align: center;
 	filter: drop-shadow(0px 2px 100px #e1f0da);
-}
-
-.hero__inner {
-	margin: 0 auto;
-	max-width: 800px;
-}
-
-.hero__title {
-	color: #fff;
-	font-weight: 500;
-	font-size: 36px;
-}
-
-.hero__tagline {
-	color: #fff;
-	margin-top: 16px;
-	font-size: 18px;
-	font-weight: 300;
 }
 
 /* Main */
@@ -125,4 +110,14 @@ footer {
 	background-color: #f5f5f5;
 	text-align: center;
 	padding: 1rem;
+}
+
+/*dimensi aksesibilitas  */
+a,
+input,
+button,
+textarea {
+	display: inline-block;
+	min-width: 44px;
+	min-height: 44px;
 }

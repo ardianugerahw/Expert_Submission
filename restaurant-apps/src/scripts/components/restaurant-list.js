@@ -12,18 +12,20 @@ class RestaurantList extends HTMLElement {
 	connectedCallback() {
 		this.render();
 	}
+
 	updateStyle() {}
+
 	render() {
 		this.updateStyle();
 
 		const restauranItemMap = this._ArrayRestaurant.map((data) => {
-			const woy = document.createElement('restaurant-item');
-			if ('setRestaurant' in woy) {
-				woy.setRestaurant(data);
+			const MapResto = document.createElement('restaurant-item');
+			if ('setRestaurant' in MapResto) {
+				MapResto.setRestaurant(data);
 			} else {
-				console.error("Error: restaurant-item doesn't have a setRestaurant method.");
+				console.error('Error: restaurant-item tidak punya setRestaurant method.');
 			}
-			return woy;
+			return MapResto;
 		});
 
 		this.innerHTML = '';

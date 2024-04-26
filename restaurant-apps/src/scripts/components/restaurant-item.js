@@ -62,17 +62,22 @@ class RestaurantItem extends HTMLElement {
         
         .card-city {
             font-weight: bold;
+			
         }
 		.card-city a{
             text-decoration: none;
 			color: #616161;
+			align-content:center;
+			
+			
         }
         
-        .card-rating {
-            color: #f9a825; /* Warna kuning untuk rating */
+        .card-rating a{
+			text-decoration: none;
+            color: #f9a825; 
+			align-content:center;
         }
         
-        /* Gaya body kartu */
         .card-body {
             padding: 15px;
         }
@@ -90,13 +95,16 @@ class RestaurantItem extends HTMLElement {
             
 			text-decoration: none;
 			color: #616161;
+			align-content:center;
         }
         
         .card-body p {
             line-height: 1.6;
         }
-
-		
+		div.card-body p a{
+			color: #616161;
+			text-decoration: none;
+		}
 		`;
 	}
 
@@ -107,17 +115,19 @@ class RestaurantItem extends HTMLElement {
         ${this._style.outerHTML}
 
 		
-				<div tabindex="0" class="card-item">
+				<div class="card-item">
 					<div class="card-header">
-						<div class="card-city"><a href="#">Kota ${this._restaurant.city}</a></div>
-						<div class="card-rating">${this._restaurant.rating}</div>
+						<div class="card-city"><a tabindex="0" href="#">Kota ${this._restaurant.city}</a></div>
+						<div class="card-rating"><a tabindex="0" href="#"> ${this._restaurant.rating}</a></div>
 					</div>
 					<div class="card-body">
-                    <img class="card-picture" src="${this._restaurant.pictureId}" alt="">
+						<img class="card-picture" src="${this._restaurant.pictureId}" alt="Gambar Restaurant">
 						<h3>
-						<a href="#">${this._restaurant.name}</a>
+							<a tabindex="0" href="#">${this._restaurant.name}</a>
 						</h3>
-						<p>${this._restaurant.description}</p>
+						<p>
+							<a tabindex="0" href="#">${this._restaurant.description}</a>
+						</p>
 					</div>
 				</div>
 			`;
