@@ -7,15 +7,30 @@ import data from '../public/data/DATA.json';
 import './components/restaurant-list';
 import './components/restaurant-item';
 import App from './views/app';
+import RestaurantDicodingSource from './data/restaurant-dicoding-source';
 
-const restoranList = document.querySelector('restaurant-list');
-restoranList.setRestaurantList(data.restaurants);
+const dataLokal = data.restaurants;
+console.log(dataLokal);
 
-// const menu = document.querySelector('.header__menu');
-// const drawer = document.querySelector('.nav');
-// const mainElement = document.querySelector('main');
-// const hero = document.querySelector('.hero');
-// const header = document.querySelector('.header');
+async function fetchPageRestaurants() {
+  try {
+    const dataOnline = await RestaurantDicodingSource.apiPageRestaurants();
+    console.log(dataOnline); // Log fetched restaurants
+    const combinedData = dataLokal.concat(dataOnline);
+    console.log(combinedData);
+    const restoranList = document.querySelector('restaurant-list');
+    restoranList.setRestaurantList(combinedData);
+  } catch (error) {
+    console.error('Error fetching page restaurants:', error);
+  }
+}
+fetchPageRestaurants();
+// fetchPageRestaurants().then((combinedData) => {
+//   restoranList.setRestaurantList(combinedData);
+// });
+
+// const restoranList = document.querySelector('restaurant-list');
+// restoranList.setRestaurantList(dataLokal);
 
 const app = new App({
   button: document.querySelector('.header__menu'),
@@ -23,21 +38,6 @@ const app = new App({
   content: document.querySelector('main'),
 });
 
-// menu.addEventListener('click', (event) => {
-//   drawer.classList.toggle('open');
-//   event.stopPropagation();
-// });
-
-// mainElement.addEventListener('click', (event) => {
-//   drawer.classList.remove('open');
-//   event.stopPropagation();
-// });
-// hero.addEventListener('click', () => {
-//   drawer.classList.remove('open');
-// });
-// header.addEventListener('click', () => {
-//   drawer.classList.remove('open');
-// });
 window.addEventListener('hashchange', () => {
   app.renderPage();
 });

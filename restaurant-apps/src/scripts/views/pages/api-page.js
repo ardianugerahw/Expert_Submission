@@ -1,4 +1,4 @@
-import RestaurantDicodingSource from '../../data/restaurant-dicoding-source';
+// import RestaurantDicodingSource from '../../data/restaurant-dicoding-source';
 
 const ApiPage = {
   async render() {
@@ -8,8 +8,8 @@ const ApiPage = {
   },
 
   async afterRender() {
-    const restaurants = await RestaurantDicodingSource.apiPageRestaurants();
-    console.log(restaurants);
+    // const restaurants = await RestaurantDicodingSource.apiPageRestaurants();
+    // console.log(restaurants);
   },
 };
 
