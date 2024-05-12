@@ -6,6 +6,6 @@
 	"liveServer.settings.CustomBrowser": "chrome",
 	"indentRainbow.colorOnWhiteSpaceOnly": false,
 	"liveServer.settings.port": 5501,
-	"prettier.singleQuote": true,
+	"prettier.enable": false,
 	"livePreview.defaultPreviewPath": "/webClock_http-server/index.html"
 }

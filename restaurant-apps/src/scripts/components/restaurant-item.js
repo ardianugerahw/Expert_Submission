@@ -1,39 +1,42 @@
 class RestaurantItem extends HTMLElement {
-	constructor() {
-		super();
-		this._restaurant = {
-			id: 0,
-			name: 'harus ada',
-			description: 'harus ada',
-			pictureId: 'harus ada',
-			city: 'harus ada',
-			rating: 'harus ada',
-		};
+  constructor() {
+    super();
+    this._restaurant = {
+      id: 0,
+      name: 'harus ada',
+      description: 'harus ada',
+      pictureId: 'harus ada',
+      city: 'harus ada',
+      rating: 'harus ada',
+    };
 
-		this._style = document.createElement('style');
-	}
-	setRestaurant(value) {
-		this._restaurant['id'] = value.id;
-		this._restaurant['name'] = value.name;
-		this._restaurant['description'] = value.description;
-		this._restaurant['pictureId'] = value.pictureId;
-		this._restaurant['city'] = value.city;
-		this._restaurant['rating'] = value.rating;
+    this._style = document.createElement('style');
+  }
 
-		// Melakukan validasi panjang deskripsi
-		if (value.description.length > 200) {
-			this._restaurant['description'] = value.description.substring(0, 200) + '...'; // Memotong deskripsi jika terlalu panjang
-		} else {
-			this._restaurant['description'] = value.description; // Menggunakan deskripsi asli jika tidak terlalu panjang
-		}
+  setRestaurant(value) {
+    this._restaurant.id = value.id;
+    this._restaurant.name = value.name;
+    this._restaurant.description = value.description;
+    this._restaurant.pictureId = value.pictureId;
+    this._restaurant.city = value.city;
+    this._restaurant.rating = value.rating;
 
-		this.render();
-	}
-	connectedCallback() {
-		this.render();
-	}
-	updateStyle() {
-		this._style.textContent = `
+    // Melakukan validasi panjang deskripsi
+    if (value.description.length > 200) {
+      this._restaurant.description = `${value.description.substring(0, 200)}...`; // Memotong deskripsi jika terlalu panjang
+    } else {
+      this._restaurant.description = value.description; // Menggunakan deskripsi asli jika tidak terlalu panjang
+    }
+
+    this.render();
+  }
+
+  connectedCallback() {
+    this.render();
+  }
+
+  updateStyle() {
+    this._style.textContent = `
         
 		.card-item {
 			border: 1px solid black;
@@ -106,12 +109,12 @@ class RestaurantItem extends HTMLElement {
 			text-decoration: none;
 		}
 		`;
-	}
+  }
 
-	render() {
-		this.updateStyle();
+  render() {
+    this.updateStyle();
 
-		this.innerHTML = `
+    this.innerHTML = `
         ${this._style.outerHTML}
 
 		
@@ -131,6 +134,6 @@ class RestaurantItem extends HTMLElement {
 					</div>
 				</div>
 			`;
-	}
+  }
 }
 customElements.define('restaurant-item', RestaurantItem);

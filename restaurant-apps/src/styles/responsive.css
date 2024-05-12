@@ -3,7 +3,7 @@ restaurant-list {
 	grid-row-gap: 16px;
 	transition: all 150ms ease-in;
 }
-@media screen and (max-width: 499px) {
+@media screen and (max-width: 624px) {
 	.nav {
 		background-color: #fff;
 		width: 200px;
@@ -43,9 +43,8 @@ restaurant-list {
 		font-size: smaller;
 	}
 }
-@media screen and (min-width: 455px) {
-}
-@media screen and (min-width: 500px) {
+
+@media screen and (min-width: 625px) {
 	header.header a.header__menu {
 		display: none;
 	}
