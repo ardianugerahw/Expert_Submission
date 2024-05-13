@@ -1,12 +1,19 @@
+import UrlParser from '../../routes/url-parser';
+import RestaurantDicodingSource from '../../data/restaurant-dicoding-source';
+import { createrestaurantsDetailTemplate } from '../templates/template-creator-restaurant';
+
 const Detail = {
   async render() {
     return `
-        <h2>Detail Page</h2>
-      `;
+      <div id="restaurant" class="restaurant"></div>
+    `;
   },
 
   async afterRender() {
-    // Fungsi ini akan dipanggil setelah render()
+    const url = UrlParser.parseActiveUrlWithoutCombiner();
+    const restaurant = await RestaurantDicodingSource.detailRestaurants(url.id);
+    const restaurantContainer = document.querySelector('#restaurant');
+    restaurantContainer.innerHTML = createrestaurantsDetailTemplate(restaurant);
   },
 };
 

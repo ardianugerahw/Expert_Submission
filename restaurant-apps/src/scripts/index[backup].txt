@@ -3,24 +3,28 @@ import '../styles/main.css';
 import '../styles/responsive.css';
 import '../styles/skip-link.css';
 
+import data from '../public/data/DATA.json';
 import './components/restaurant-list';
 import './components/restaurant-item';
 import App from './views/app';
 import RestaurantDicodingSource from './data/restaurant-dicoding-source';
 
+const dataLokal = data.restaurants;
+console.log(dataLokal);
+
 async function fetchPageRestaurants() {
   try {
     const dataOnline = await RestaurantDicodingSource.apiPageRestaurants();
     console.log(dataOnline); // Log fetched restaurants
-
+    const combinedData = dataLokal.concat(dataOnline);
+    console.log(combinedData);
     const restoranList = document.querySelector('restaurant-list');
-    restoranList.setRestaurantList(dataOnline);
+    restoranList.setRestaurantList(combinedData);
   } catch (error) {
     console.error('Error fetching page restaurants:', error);
   }
 }
 fetchPageRestaurants();
-
 // fetchPageRestaurants().then((combinedData) => {
 //   restoranList.setRestaurantList(combinedData);
 // });
