@@ -55,9 +55,7 @@ restaurant-list {
 		grid-template-columns: 1fr;
 		width: 100%;
 	}
-	.card {
-		width: 100%;
-	}
+	
 }
 @media screen and (min-width: 700px) {
 	restaurant-list {
@@ -66,13 +64,31 @@ restaurant-list {
 		grid-column-gap: 10px;
 		grid-row-gap: 16px;
 	}
+	
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 840px) {
+	
+	
 }
 @media screen and (min-width: 900px) {
 	restaurant-list {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
+
+	}
+	.detail-container {
+		grid-template-columns: auto 1fr;
+		
+	}
+	.detail-container .restaurant__title {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+	.detail-container .restaurant__menu {
+		justify-content: center;
+		align-items: center;
+		align-content: center;
+		justify-self: center;
 	}
 }
 @media screen and (min-width: 1200px) {

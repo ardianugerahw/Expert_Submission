@@ -1,0 +1,37 @@
+{
+    "id": "restaurant-apps-pwa",
+    "start_url": "./index.html",
+    "name": "Restaurant Apps PWA",
+    "short_name": "Restaurant Apps",
+    "description": "Free Catalogue Movie for you",
+    "display": "standalone",
+    "background_color": "#FFFFFF",
+    "theme_color": "#D84315",
+    "icons": [
+      {
+        "src": "/favicon_72-72.png",
+        "sizes": "72x72",
+        "type": "image/png",
+        "purpose": "any"
+      } ,
+      {
+        "src": "/favicon.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any"
+      } 
+    ],
+    "screenshots": [
+        {
+            "src": "/favicon.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        },
+        {
+            "src": "/favicon_1920-1140.png",
+            "type": "image/png",
+            "sizes": "1920x1140",
+            "form_factor": "wide" 
+        }
+    ]
+  }

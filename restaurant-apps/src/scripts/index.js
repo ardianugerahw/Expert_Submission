@@ -14,7 +14,7 @@ async function fetchPageRestaurants() {
     console.log(dataOnline); // Log fetched restaurants
 
     const restoranList = document.querySelector('restaurant-list');
-    restoranList.setRestaurantList(dataOnline);
+    restoranList?.setRestaurantList(dataOnline);
   } catch (error) {
     console.error('Error fetching page restaurants:', error);
   }

@@ -47,63 +47,61 @@ class RestaurantItem extends HTMLElement {
 
 			transition: all 150ms ease-in;
 
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            text-align: center;
-        }
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      text-align: center;
+    }
         
-        
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px;
-            border-bottom: 1px solid #eee;
-        }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+    }
 		
         
-        .card-city {
-            font-weight: bold;
-			
-        }
-		.card-city a{
-            text-decoration: none;
-			color: #616161;
-			align-content:center;
-			
-			
-        }
-        
-        .card-rating a{
-			text-decoration: none;
-            color: #f9a825; 
-			align-content:center;
-        }
-        
-        .card-body {
-            padding: 15px;
-        }
-        .card-body img {
-            width:100%;
-        }
+    .card-city {
+      font-weight: bold;
+    }
 
-        .card-body h3 {
-            margin-top: 0;
-            margin-bottom: 10px;
-            font-size: 18px;
-			
-        }
-		.card-body h3 a  {
-            
-			text-decoration: none;
+		.card-city a{
+      text-decoration: none;
 			color: #616161;
 			align-content:center;
-        }
+    }
         
-        .card-body p {
-            line-height: 1.6;
-        }
+    .card-rating a{
+			text-decoration: none;
+      color: #f9a825; 
+			align-content:center;
+    }
+        
+    .card-body {
+      padding: 15px;
+    }
+
+    .card-body img {
+      width:100%;
+    }
+
+    .card-body h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+		.card-body h3 a  {
+      text-decoration: none;
+			color: #616161;
+			align-content:center;
+    }
+        
+    .card-body p {
+      line-height: 1.6;
+    }
+
 		div.card-body p a{
 			color: #616161;
 			text-decoration: none;
@@ -120,7 +118,7 @@ class RestaurantItem extends HTMLElement {
 		
 				<div class="card-item">
 					<div class="card-header">
-						<div class="card-city"><a tabindex="0" href="#">Kota ${this._restaurant.city}</a></div>
+						<div class="card-city"><a tabindex="0" href="/#/detail/${this._restaurant.id}">Kota ${this._restaurant.city}</a></div>
 						<div class="card-rating"><a tabindex="0" href="#"> ${this._restaurant.rating}</a></div>
 					</div>
 					<div class="card-body">
@@ -129,7 +127,7 @@ class RestaurantItem extends HTMLElement {
 							<a tabindex="0" href="/#/detail/${this._restaurant.id}">${this._restaurant.name}</a>
 						</h3>
 						<p>
-							<a tabindex="0" href="#">${this._restaurant.description}</a>
+							<a tabindex="0" href="/#/detail/${this._restaurant.id}">${this._restaurant.description}</a>
 						</p>
 					</div>
 				</div>

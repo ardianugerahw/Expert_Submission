@@ -122,21 +122,86 @@ textarea {
 	min-height: 44px;
 }
 
-/* restaurant details */
-.restaurant {
-	margin: 0 auto;
-	width: 100%;
-	max-width: 800px;
+/* 
+	restaurant details 
+*/
+
+.detail-container {
 	display: grid;
-	grid-template-columns: 1fr;
-	gap: 18px 16px;
+	gap: 20px;
+	background-color: #fff; 
+	border-radius: 10px; 
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+	width: 100%; 
+	margin: 15px auto; 
+	padding: 20px; 
+	color: #333;
   }
-   
-  .restaurant .restaurant__poster {
-	width: 100%;
-	max-width: 600px;
+  
+  /* Restaurant title */
+  .restaurant__title {
+	font-size: 24px; 
+	font-weight: bold; 
+	margin-bottom: 10px; 
   }
-   
-  .restaurant .restaurant__info h4 {
-	margin: 8px 0;
+  
+  /* Restaurant poster image */
+  .restaurant__poster {
+	width: 100%; 
+	max-width: 500px;
+	/* Adjust image height */
+	object-fit: cover; 
   }
+  
+  /* Restaurant info section */
+  .restaurant__info {
+	margin-top: 15px;
+  }
+  
+  /* Information headings */
+  .restaurant__info h3,
+  .restaurant__info h4, 
+  .restaurant__menu h3,
+  .restaurant__menu h4,
+  .restaurant__overview h3{
+	font-size: 18px; 
+	margin-bottom: 5px; 
+  }
+  
+  /* Information text */
+  .restaurant__info p {
+	margin-bottom: 10px; 
+  }
+  
+  /* Menu list styling */
+  .restaurant__info ul {
+	list-style: none; 
+	padding: 0; 
+	margin: 0; 
+  }
+  
+  /* Menu list items */
+  .restaurant__info ul li {
+	margin-bottom: 5px; 
+  }
+  
+  /* Restaurant overview section */
+  .restaurant__overview {
+	margin-top: 15px;
+;
+  }
+
+  .restaurant__overview div.review__container{
+	background-color: #E1F0DA; 
+	border-radius: 10px; 
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+	width: 100%; 
+	margin: 15px auto; 
+	padding: 20px; 
+  }
+  
+  /* Overview text */
+  .restaurant__overview p {
+	font-style: italic; 
+  }
+  

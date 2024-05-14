@@ -1,7 +1,8 @@
 import CONFIG from '../../globals/config';
 
 const createrestaurantsDetailTemplate = (restaurant) => `
-<h2 class="restaurant__title">${restaurant.name}</h2>
+<div class="detail-container">
+  <h2 class="restaurant__title">${restaurant.name}</h2>
   <img class="restaurant__poster" src="${CONFIG.BASE_URL}/images/large/${restaurant.pictureId}" alt="${restaurant.title}" />
   <div class="restaurant__info">
     <h3>Information</h3>
@@ -11,32 +12,27 @@ const createrestaurantsDetailTemplate = (restaurant) => `
     <p>${restaurant.city}</p>
     <h4>Deskripsi</h4>
     <p>${restaurant.description}</p>
+  </div>
+  <div class="restaurant__menu">
     <h4>Menu Makanan</h4>
-    <p>${restaurant.menus?.foods?.name || 'Menu minuman tidak tersedia'}</p>
+    ${restaurant.menus.foods.reduce((show, value) => show.concat(`<li>${value.name}</li>`), '')}
+    <br>
     <h4>Menu Minuman</h4>
-    <p>${restaurant.menus.drinks.name}</p>
+    ${restaurant.menus.drinks.reduce((show, value) => show.concat(`<li>${value.name}</li>`), '')}
   </div>
   <div class="restaurant__overview">
-    <h3>Overview</h3>
-    <p>${restaurant.customerReviews}</p>
+    ${restaurant.customerReviews.reduce((show, value) => show.concat(`
+
+    <div class="review__container"> 
+      <p>${value.name}</p>
+      <p>${value.review}</p>
+      <p>${value.date}</p>
+    </div>
+
+        `), '<h4>Customer Reviews:</h4>')}
   </div>
+</div>
 `;
 // name, ,pictureId, address, city, description, menus.foods, menus.drinks, customerReviews
-const createrestaurantsItemTemplate = (restaurants) => `
-// div`;
+const createrestaurantsItemTemplate = (restaurants) => restaurants;
 export { createrestaurantsItemTemplate, createrestaurantsDetailTemplate };
-// <div class="card-item">
-// <div class="card-header">
-//     <div class="card-city"><a tabindex="0" href="#">Kota ${restaurant.city}</a></div>
-//     <div class="card-rating"><a tabindex="0" href="#"> ${restaurant.rating}</a></div>
-// </div>
-// <div class="card-body">
-//     <img class="card-picture" src="${restaurant.pictureId}" alt="Gambar Restaurant">
-//     <h3>
-//         <a tabindex="0" href="#">${restaurant.name}</a>
-//     </h3>
-//     <p>
-//         <a tabindex="0" href="#">${restaurant.description}</a>
-//     </p>
-// </div>
-// </div>
