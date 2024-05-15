@@ -32,6 +32,36 @@ const createrestaurantsDetailTemplate = (restaurant) => `
   </div>
 </div>
 `;
+
+const createLikeButtonTemplate = () => `
+  <button aria-label="like this movie" id="likeButton" class="like">
+     <i class="fa fa-heart-o" aria-hidden="true"></i>
+  </button>
+`;
+
+const createLikedButtonTemplate = () => `
+  <button aria-label="unlike this movie" id="likeButton" class="like">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </button>
+`;
 // name, ,pictureId, address, city, description, menus.foods, menus.drinks, customerReviews
-const createrestaurantsItemTemplate = (restaurants) => restaurants;
-export { createrestaurantsItemTemplate, createrestaurantsDetailTemplate };
+const createrestaurantsItemTemplate = (restaurant) => `
+<div class="detail-container">
+  <h2 class="restaurant__title">${restaurant.name}</h2>
+  <img class="restaurant__poster" src="${CONFIG.BASE_URL}/images/large/${restaurant.pictureId}" alt="${restaurant.title}" />
+  <div class="restaurant__info">
+    <h3>Information</h3>
+    <h4>Alamat</h4>
+    <p>${restaurant.address}</p>
+    <h4>Kota</h4>
+    <p>${restaurant.city}</p>
+    <h4>Deskripsi</h4>
+    <p>${restaurant.description}</p>
+  </div>
+  
+`;
+
+export {
+  createrestaurantsItemTemplate, createrestaurantsDetailTemplate, createLikeButtonTemplate,
+  createLikedButtonTemplate,
+};
