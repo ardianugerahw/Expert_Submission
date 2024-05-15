@@ -22,7 +22,6 @@ const createrestaurantsDetailTemplate = (restaurant) => `
   </div>
   <div class="restaurant__overview">
     ${restaurant.customerReviews.reduce((show, value) => show.concat(`
-
     <div class="review__container"> 
       <p>${value.name}</p>
       <p>${value.review}</p>

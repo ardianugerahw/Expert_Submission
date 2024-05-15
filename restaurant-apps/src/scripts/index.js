@@ -7,6 +7,7 @@ import './components/restaurant-list';
 import './components/restaurant-item';
 import App from './views/app';
 import RestaurantDicodingSource from './data/restaurant-dicoding-source';
+import swRegister from './utils/sw-register';
 
 async function fetchPageRestaurants() {
   try {
@@ -40,4 +41,5 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage();
+  swRegister();
 });
