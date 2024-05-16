@@ -227,4 +227,24 @@ textarea {
 	color: white;
 	cursor: pointer;
   }
+
+/* 
+Tambahan styling
+*/
    
+.restaurant__title a{
+	text-decoration: none;
+	color: #616161;
+}
+.restaurant__info h3, .restaurant__info h4, .restaurant__info h3 a, .restaurant__info h4 a {
+	display: inline-block;
+	min-width: 44px;
+	min-height: 44px;
+	text-decoration: none;
+	color: #343434 ;
+	padding: 0;
+	margin: 0;
+	align-items: center;
+	align-content: center;
+	align-self:center;
+}

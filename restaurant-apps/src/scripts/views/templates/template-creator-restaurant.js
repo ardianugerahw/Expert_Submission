@@ -1,7 +1,7 @@
 import CONFIG from '../../globals/config';
 
 const createrestaurantsDetailTemplate = (restaurant) => `
-<div class="detail-container">
+<div id="maincontent" class="detail-container">
   <h2 class="restaurant__title">${restaurant.name}</h2>
   <img class="restaurant__poster" src="${CONFIG.BASE_URL}/images/large/${restaurant.pictureId}" alt="${restaurant.title}" />
   <div class="restaurant__info">
@@ -46,16 +46,15 @@ const createLikedButtonTemplate = () => `
 `;
 // name, ,pictureId, address, city, description, menus.foods, menus.drinks, customerReviews
 const createrestaurantsItemTemplate = (restaurant) => `
-<div class="detail-container">
-  <h2 class="restaurant__title">${restaurant.name}</h2>
+<div id="maincontent" class="detail-container">
+  <h2 class="restaurant__title"><a tabindex="0" href="/#/detail/${restaurant.id}">${restaurant.name}</a></h2>
   <img class="restaurant__poster" src="${CONFIG.BASE_URL}/images/large/${restaurant.pictureId}" alt="${restaurant.title}" />
   <div class="restaurant__info">
-    <h3>Information</h3>
-    <h4>Alamat</h4>
+    <h4><a tabindex="0" href="/#/detail/${restaurant.id}">Alamat</a></h4>
     <p>${restaurant.address}</p>
-    <h4>Kota</h4>
+    <h4><a tabindex="0" href="/#/detail/${restaurant.id}">Kota</a></h4>
     <p>${restaurant.city}</p>
-    <h4>Deskripsi</h4>
+    <h4><a tabindex="0" href="/#/detail/${restaurant.id}">Deskripsi</a></h4>
     <p>${restaurant.description}</p>
   </div>
   

@@ -22,13 +22,6 @@ async function fetchPageRestaurants() {
 }
 fetchPageRestaurants();
 
-// fetchPageRestaurants().then((combinedData) => {
-//   restoranList.setRestaurantList(combinedData);
-// });
-
-// const restoranList = document.querySelector('restaurant-list');
-// restoranList.setRestaurantList(dataLokal);
-
 const app = new App({
   button: document.querySelector('.header__menu'),
   drawer: document.querySelector('.nav'),
