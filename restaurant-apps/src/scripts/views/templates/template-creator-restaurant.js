@@ -1,9 +1,9 @@
 import CONFIG from '../../globals/config';
 
 const createrestaurantsDetailTemplate = (restaurant) => `
-<div id="maincontent" class="detail-container">
+<div tabindex="0" id="maincontent" class="detail-container">
   <h2 class="restaurant__title">${restaurant.name}</h2>
-  <img class="restaurant__poster" src="${CONFIG.BASE_URL}/images/large/${restaurant.pictureId}" alt="${restaurant.title}" />
+  <img class="restaurant__poster" crossorigin="anonymous" src="${CONFIG.BASE_URL}/images/large/${restaurant.pictureId}" alt="${restaurant.title}" />
   <div class="restaurant__info">
     <h3>Information</h3>
     <h4>Alamat</h4>
@@ -48,7 +48,7 @@ const createLikedButtonTemplate = () => `
 const createrestaurantsItemTemplate = (restaurant) => `
 <div id="maincontent" class="detail-container">
   <h2 class="restaurant__title"><a tabindex="0" href="/#/detail/${restaurant.id}">${restaurant.name}</a></h2>
-  <img class="restaurant__poster" src="${CONFIG.BASE_URL}/images/large/${restaurant.pictureId}" alt="${restaurant.title}" />
+  <img class="restaurant__poster" crossorigin="anonymous" src="${CONFIG.BASE_URL}/images/large/${restaurant.pictureId}" alt="${restaurant.title}" />
   <div class="restaurant__info">
     <h4><a tabindex="0" href="/#/detail/${restaurant.id}">Alamat</a></h4>
     <p>${restaurant.address}</p>

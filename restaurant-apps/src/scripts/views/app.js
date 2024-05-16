@@ -33,6 +33,11 @@ class App {
     if (page) {
       this._content.innerHTML = await page.render();
       await page.afterRender();
+      const skipLinkElem = document.querySelector('.skip-link');
+      skipLinkElem.addEventListener('click', (event) => {
+        event.preventDefault();
+        document.querySelector('#maincontent').focus();
+      });
     } else {
       // Handle missing route (e.g., display a "Not Found" message)
     }
