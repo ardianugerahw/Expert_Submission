@@ -1,7 +1,7 @@
 import { createrestaurantsItemTemplate } from '../../templates/template-creator-restaurant';
 
 class FavoriteRestaurantView {
-  getTemplate() {
+  static getTemplate() {
     return `
       <div class="content">
         <input id="query" type="text">
@@ -13,7 +13,7 @@ class FavoriteRestaurantView {
     `;
   }
 
-  runWhenUserIsSearching(callback) {
+  static runWhenUserIsSearching(callback) {
     document.getElementById('query').addEventListener('change', (event) => {
       callback(event.target.value);
     });
@@ -32,7 +32,7 @@ class FavoriteRestaurantView {
     document.getElementById('restaurants').dispatchEvent(new Event('restaurants:updated'));
   }
 
-  _getEmptyRestaurantTemplate() {
+  static _getEmptyRestaurantTemplate() {
     return `
       <div class="restaurant-item__not__found">
         Tidak ada film untuk ditampilkan

@@ -15,6 +15,11 @@ exports.config = {
       browser: 'chromium',
       url: 'http://localhost:8080',
       show: true,
+      chromium: {
+        args: [
+          '--start-maximized',
+        ],
+      },
     },
   },
   include: {

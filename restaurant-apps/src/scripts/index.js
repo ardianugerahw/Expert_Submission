@@ -2,12 +2,16 @@ import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
 import '../styles/responsive.css';
 import '../styles/skip-link.css';
+import '../styles/hero.css';
 
 import './components/restaurant-list';
 import './components/restaurant-item';
 import App from './views/app';
 import RestaurantDicodingSource from './data/restaurant-dicoding-source';
 import swRegister from './utils/sw-register';
+
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 async function fetchPageRestaurants() {
   try {

@@ -73,13 +73,16 @@ nav.nav ul.nav__list li.nav__item a:hover {
 
 /* Hero */
 div.hero {
-	background-image: url('../public/images/heros/hero-image_2.jpg');
+	/* background-image: url('../public/images/heros/hero-image_2.jpg'); */
+	/* background-image: url('../public/images/responsive/hero-image_2-large.jpg'); */
+
 	background-position: center;
 	width: 100%;
 	min-height: 400px;
 
 	display: flex;
 	filter: drop-shadow(0px 2px 100px #e1f0da);
+	background-color: salmon;
 }
 
 /* Main */

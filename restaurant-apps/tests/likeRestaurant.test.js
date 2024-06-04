@@ -8,7 +8,7 @@ describe('Liking A restaurant', () => {
   };
   beforeEach(() => {
     addLikeButtonContainer();
-    spyOn(FavoriteRestaurantIdb, 'searchRestaurants');
+    // spyOn(FavoriteRestaurantIdb, 'searchRestaurants');
   });
 
   it('should show the like button when the movie has not been liked before', async () => {

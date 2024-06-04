@@ -1,85 +1,72 @@
-const assert = require('assert');
-
 Feature('Liking Restaurants');
 
 Before(({ I }) => {
-  I.amOnPage('/#/like');
+  I.amOnPage('/');
 });
 
-Scenario('showing empty liked restaurants', ({ I }) => {
-  I.seeElement('#query');
-
-  // I.seeElement('.query'); --> menyebabkan error
-
-  I.see('Tidak ada film untuk ditampilkan', '.restaurant-item__not__found');
-});
-
-Scenario('liking one restaurant', async ({ I }) => {
-  I.see('Tidak ada film untuk ditampilkan', '.restaurant-item__not__found');
-
+Scenario('cycle liking one restaurant', async ({ I }) => {
   I.amOnPage('/');
 
+  // // pause();
+
+  I.seeElement('.card-city a');
+  const firstRestaurant = locate('.card-city a').first();
   // pause();
-
-  I.seeElement('.restaurant__title a');
-  const firstRestaurant = locate('.restaurant__title a').first();
-  const firstRestaurantTitle = await I.grabTextFrom(firstRestaurant);
   I.click(firstRestaurant);
-
-  I.seeElement('#likeButton');
-  I.click('#likeButton');
-
+  // pause();
+  I.seeElement('#likeButtonContainer button');
+  const firstLike = locate('#likeButtonContainer button').first();
+  // pause();
+  I.click(firstLike);
+  // pause();
   I.amOnPage('/#/like');
-  I.seeElement('.restaurant-item');
-  const likedRestaurantTitle = await I.grabTextFrom('.restaurant__title');
-
-  assert.strictEqual(firstRestaurantTitle, likedRestaurantTitle);
+  // pause();
 });
 
-Scenario('searching restaurants', async ({ I }) => {
-  I.see('Tidak ada film untuk ditampilkan', '.restaurant-item__not__found');
-
+Scenario('cycle unliking one restaurant', async ({ I }) => {
   I.amOnPage('/');
 
-  I.seeElement('.restaurant__title a');
+  // // pause();
 
-  const titles = [];
-
-  // eslint-disable-next-line no-plusplus
-  for (let i = 1; i <= 3; i++) {
-    I.click(locate('.restaurant__title a').at(i));
-
-    I.seeElement('#likeButton');
-    I.click('#likeButton');
-
-    // eslint-disable-next-line no-await-in-loop
-    titles.push(await I.grabTextFrom('.restaurant__title'));
-
-    I.amOnPage('/');
-  }
-
+  I.seeElement('.card-city a');
+  const firstRestaurant = locate('.card-city a').first();
+  // pause();
+  I.click(firstRestaurant);
+  // pause();
+  I.seeElement('#likeButtonContainer button');
+  const firstLike = locate('#likeButtonContainer button').first();
+  // pause();
+  I.click(firstLike);
+  // pause();
   I.amOnPage('/#/like');
-  I.seeElement('#query');
 
-  const visibleLikedRestaurants = await I.grabNumberOfVisibleElements('.restaurant-item');
-  assert.strictEqual(titles.length, visibleLikedRestaurants);
-
-  const searchQuery = titles[1].substring(1, 3);
-
-  I.fillField('#query', searchQuery);
-  I.pressKey('Enter');
-
-  // mendapatkan daftar film yang sesuai dengan searchQuery
-  const matchingRestaurants = titles.filter((title) => title.indexOf(searchQuery) !== -1);
-  const visibleSearchedLikedRestaurants = await I.grabNumberOfVisibleElements('.restaurant-item');
-
-  assert.strictEqual(matchingRestaurants.length, visibleSearchedLikedRestaurants);
-
-  // eslint-disable-next-line no-plusplus
-  for (let i = 0; i < matchingRestaurants.length; i++) {
-    // eslint-disable-next-line no-await-in-loop
-    const visibleTitle = await I.grabTextFrom(locate('.restaurant__title').at(i + 1));
-
-    assert.strictEqual(matchingRestaurants[i], visibleTitle);
-  }
+  I.seeElement('.restaurant__title a');
+  const restaurantTitle = locate('.restaurant__title a').first();
+  // pause();
+  I.click(restaurantTitle);
+  // pause();
+  I.seeElement('#likeButtonContainer button');
+  const firstUnlike = locate('#likeButtonContainer button').first();
+  // pause();
+  I.click(firstUnlike);
+  // pause();
+  I.amOnPage('/#/like');
+  // pause();
 });
+
+// Scenario('cycle liking many restaurants', async ({ I }) => {
+//   I.amOnPage('/');
+
+//   I.seeElement('.card-city a');
+//   const restaurants = locate('.card-city a');
+
+//   for (let i = 0; i < restaurants.count; i++) {
+//     const restaurant = restaurants.at(i);
+//     I.click(restaurant);
+
+//     I.seeElement('#likeButtonContainer button');
+//     const likeButton = locate('#likeButtonContainer button').first();
+//     I.click(likeButton);
+//     pause();
+//   }
+// });

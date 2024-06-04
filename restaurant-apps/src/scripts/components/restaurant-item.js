@@ -122,7 +122,7 @@ class RestaurantItem extends HTMLElement {
 						<div class="card-rating"><a tabindex="0" href="#"> ${this._restaurant.rating}</a></div>
 					</div>
 					<div class="card-body">
-						<img class="card-picture" crossorigin="anonymous" src="https://restaurant-api.dicoding.dev/images/small/${this._restaurant.pictureId}" alt="Gambar Restaurant">
+						<img loading="lazy" class="card-picture" crossorigin="anonymous" src="https://restaurant-api.dicoding.dev/images/small/${this._restaurant.pictureId}" alt="Gambar Restaurant">
 						<h3>
 							<a tabindex="0" href="/#/detail/${this._restaurant.id}">${this._restaurant.name}</a>
 						</h3>

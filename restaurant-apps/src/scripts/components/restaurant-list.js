@@ -16,7 +16,7 @@ class RestaurantList extends HTMLElement {
 
   // eslint-disable-next-line class-methods-use-this
   updateStyle() {
-    console.log('ini update style masih belum terurus');
+    console.log('update style sudah teratasi');
   }
 
   render() {
